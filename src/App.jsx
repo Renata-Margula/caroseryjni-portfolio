@@ -34,15 +34,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function App() {
-  // Replace these with your actual image URLs (direct links)
+  
   const [images] = useState([
-    // Example placeholders - replace with direct URLs
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+1",
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+2",
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+3",
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+4",
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+5",
-    "https://via.placeholder.com/1600x1000?text=Classic+Car+6",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (1).jpg",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (2).jpg",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (3).jpg",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (4).jpg",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (5).jpg",
+    "caroseryjni_portfolio_fotografia motoryzacyjna (6).jpg",
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
