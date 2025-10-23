@@ -36,12 +36,12 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function App() {
   
   const [images] = useState([
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna2.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna4.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna2.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna4.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
+  "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
