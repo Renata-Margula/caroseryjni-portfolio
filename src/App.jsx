@@ -1,34 +1,3 @@
-/*
-React single-file portfolio app for a classic-car photographer/garage (dark theme).
-
-How to use:
-1) Install dependencies in a new React app (Vite or Create React App):
-   npm init vite@latest my-portfolio --template react
-   cd my-portfolio
-   npm install
-   npm install framer-motion
-   # Install Tailwind (follow Tailwind docs). Example:
-   npm install -D tailwindcss postcss autoprefixer
-   npx tailwindcss init -p
-   // add Tailwind directives to ./src/index.css
-
-2) Put this file as src/App.jsx and import ./index.css that has Tailwind base/components/utilities.
-3) Replace images[] entries with direct image URLs hosted where you control them.
-   - You can use direct image links exported from Facebook (right-click -> copy image address) or
-     download and upload to a CDN (Cloudinary, ImgBB, Imgur, your hosting) for stability.
-   - Google Image search links often redirect; it's best to host the images yourself.
-
-Notes on images from Facebook/Google (copyright): ensure you have the rights to publish them.
-
-Features included:
-- Dark, modern layout for classic car photography
-- Parallax hero, scroll-reveal animations (Framer Motion + IntersectionObserver), gallery grid
-- Lightbox modal with pinch/drag support fallback (basic)
-- Smooth scroll, responsive nav, contact form (mailto), social links
-- Easy to customize colors, spacing, fonts via Tailwind classes
-
-Replace the sample data in the `images` array with your actual image URLs.
-*/
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -36,18 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function App() {
   
   const [images] = useState([
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna2.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna4.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
-  "/images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  // Smooth lock body scroll when lightbox open
+
   useEffect(() => {
     document.body.style.overflow = lightboxIndex !== null ? "hidden" : "auto";
   }, [lightboxIndex]);
