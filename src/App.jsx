@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // -------------------- Animated Light Effect --------------------
@@ -22,32 +21,38 @@ function AnimatedLightEffect() {
     </div>
   );
 }
+
+// -------------------- Accordion --------------------
 function AccordionItem({ title, content, media }) {
   const [isOpen, setIsOpen] = useState(false);
+  const id = `accordion-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <div className="border-b border-white/10 py-3">
       <button
         onClick={() => setIsOpen(v => !v)}
+        aria-expanded={isOpen}
+        aria-controls={id}
         className="w-full text-left flex justify-between items-center text-neutral-200 font-medium"
       >
         {title}
         <span>{isOpen ? "▲" : "▼"}</span>
       </button>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={id}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             className="mt-2 text-neutral-300 overflow-hidden"
           >
             <p>{content}</p>
-            {media && media.type === "image" && (
-              <img src={media.src} alt={title} className="mt-2 rounded-md" />
+            {media?.type === "image" && (
+              <img src={media.src} alt={title} className="mt-2 rounded-md" loading="lazy" />
             )}
-            {media && media.type === "video" && (
+            {media?.type === "video" && (
               <video src={media.src} controls className="mt-2 w-full rounded-md" />
             )}
           </motion.div>
@@ -57,257 +62,7 @@ function AccordionItem({ title, content, media }) {
   );
 }
 
-export default function App() {
-
-  const [images] = useState([
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg", fbLink: "https://facebook.com/album1" },
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp", fbLink: "https://facebook.com/album2" },
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg", fbLink: "https://facebook.com/album3" },
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp", fbLink: "https://facebook.com/album4" },
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg", fbLink: "https://facebook.com/album5" },
-    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg", fbLink: "https://facebook.com/album6" },
-  ]);
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-  const [showIntroLogo, setShowIntroLogo] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setShowIntroLogo(false), 1500); // po 1.5s logo dociera do headera
-    return () => clearTimeout(timer);
-  }, []);
-
-
-  useEffect(() => {
-    document.body.style.overflow = lightboxIndex !== null ? "hidden" : "auto";
-  }, [lightboxIndex]);
-
-  return (
-    <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans">
-      <AnimatedLightEffect />
-      {showIntroLogo && (
-        <motion.div
-          className="fixed inset-0 bg-black flex items-center justify-center z-50"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-        >
-          <motion.img
-            src="images/caroseryjni_logo_bl_wh.png"
-            alt="Logo"
-            layoutId="logo" // łączymy z headerem
-            initial={{ scale: 3 }} // duże na środku
-            animate={{ scale: 1 }} // zmniejsza się do headera
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="w-32 h-32 object-contain"
-          />
-        </motion.div>
-      )}
-
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-black/40">
-        <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <motion.div
-              layoutId="logo"
-              className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"
-            >
-              <img src="images/caroseryjni_logo_bl_wh.png" alt="Logo" className="w-[70%] h-[70%] object-contain" />
-            </motion.div>
-            <div>
-              <a href="#hero" className="text-lg font-semibold tracking-tight">Caroseryjni</a>
-              <div className="text-xs text-neutral-400">Renata & Jakub</div>
-            </div>
-          </div>
-
-
-          <nav className="hidden md:flex items-center gap-6 text-neutral-300">
-            <a href="#portfolio" className="hover:text-white transition">Portfolio</a>
-            <a href="#about" className="hover:text-white transition">O nas</a>
-            <a href="#contact" className="hover:text-white transition">Kontakt</a>
-            <a href="#" className="px-4 py-2 rounded-md border border-neutral-700 hover:bg-white/5 transition">Book</a>
-          </nav>
-
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(v => !v)} aria-label="menu" className="p-2 rounded-md ring-1 ring-white/5">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </button>
-          </div>
-        </div>
-
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-white/5">
-              <div className="px-5 py-4 flex flex-col gap-3 text-neutral-300">
-                <a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a>
-                <a href="#about" onClick={() => setMenuOpen(false)}>O nas</a>
-                <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-
-      <main>
-        {/* HERO with parallax */}
-        <section id="hero" className="relative overflow-hidden">
-          <ParallaxHero image={images[0]} />
-          <div className="max-w-6xl mx-auto px-5 py-24 relative z-10">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="space-y-6">
-                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Caroseryjni - fotografia motoryzacyjna</h1>
-                <p className="text-neutral-300 max-w-xl">Klasyczne samochody w klimacie dokumentalnym i studyjnym. Sesje, restauracje, eventy. Fotografia, która oddaje duszę metalowych piękności.</p>
-                <div className="flex gap-3">
-                  <a href="#portfolio" className="px-6 py-3 rounded-md bg-white/6 border border-white/6 backdrop-blur-sm hover:bg-white/8 transition">Zobacz portfolio</a>
-                  <a href="#contact" className="px-6 py-3 rounded-md border border-neutral-700 hover:bg-white/5 transition">Kontakt</a>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-right md:text-left">
-                <div className="inline-block text-neutral-400">Działamy od: <strong className="text-white">2020</strong></div>
-                <div className="mt-4 text-sm text-neutral-300">Specjalizacja: Fotografia samochodowa klasyków, restauracje, sesje detailingu, reportaże z eventów.</div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Portfolio gallery */}
-        <section id="portfolio" className="max-w-6xl mx-auto px-5 py-20">
-          <SectionTitle title="Portfolio" subtitle="Klasyczne samochody. Wybrane sesje." />
-
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-            {images.map((image, i) => (
-              <GalleryCard key={i} image={image} i={i} onOpen={() => setLightboxIndex(i)} />
-            ))}
-          </div>
-
-
-        </section>
-
-        {/* About */}
-        <section id="about" className="max-w-6xl mx-auto px-5 py-20 border-t border-white/5">
-          <div className="md:flex gap-8 items-center">
-            <div className="md:w-1/2">
-              <SectionTitle title="O nas" subtitle="Fotografia klasycznych samochodów" />
-              <p className="mt-4 text-neutral-300">
-                Jesteśmy dwójką pasjonatów, których drogi życiowe skrzyżowały się w świecie fotografii i motoryzacji.
-              </p>
-
-              <div className="mt-4 space-y-2">
-                <AccordionItem
-                  title="Zdjęcia z drona i krótkie formy video na social media"
-                  content="Fotografujemy samochody w plenerze, zarówno statycznie jak i w ruchu."
-                  media={{ type: "video", src: "/videos/sesja_plener.mp4" }}
-                />
-                <AccordionItem
-                  title="Sesje plenerowe (statyczne i w ruchu)"
-                  content="Tworzymy ujęcia z drona i krótkie filmy idealne do social media."
-                  media={{ type: "image", src: "/images/drone_shot.jpg" }}
-                />
-                <AccordionItem
-                  title="Zdjęcia wnętrz, indywidualne, biznesowe"
-                  content="Profesjonalne sesje wnętrz i zdjęcia biznesowe."
-                />
-                <AccordionItem
-                  title="I inne - napisz do nas"
-                  content="Masz indywidualny pomysł? Skontaktuj się z nami."
-                />
-              </div>
-            </div>
-            <div className="md:w-1/2 mt-8 md:mt-0">
-              <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-white/5">
-                <img src={images[1].src} alt="about" className="w-full h-full object-cover" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section id="contact" className="max-w-6xl mx-auto px-5 py-20">
-          <SectionTitle title="Kontakt" subtitle="Zamów sesję lub zapytaj o szczegóły" />
-
-          <div className="mt-8 grid md:grid-cols-2 gap-8 items-start">
-            <div>
-              <p className="text-neutral-300">Chętnie przygotujemy ofertę dopasowaną do Twojego klasyka. Poniżej znajdziesz szybki formularz (mailto) lub informacje kontaktowe.</p>
-
-              <div className="mt-6 space-y-3 text-neutral-300">
-                <div>📞 +48 503 363 989</div>
-                <div>✉️ <a href="mailto:kontakt@caroseryjni.pl" className="underline">kontakt@caroseryjni.pl</a></div>
-                <div>📍 Wrocław /Cała Polska /Dojazd na sesję</div>
-
-                <div className="flex gap-3 mt-4">
-                  <a href="#" className="px-3 py-2 rounded-md border border-white/6 text-sm">Facebook</a>
-                  <a href="#" className="px-3 py-2 rounded-md border border-white/6 text-sm">Instagram</a>
-                </div>
-              </div>
-            </div>
-
-            <form className="bg-white/3 p-6 rounded-xl ring-1 ring-white/5">
-              <label className="block text-sm text-neutral-200">Imię i nazwisko</label>
-              <input className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" placeholder="Jan Kowalski" />
-
-              <label className="block text-sm text-neutral-200 mt-4">E-mail</label>
-              <input className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" placeholder="twoj@email.pl" />
-
-              <label className="block text-sm text-neutral-200 mt-4">Wiadomość</label>
-              <textarea className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" rows={5} placeholder="Krótki opis projektu" />
-
-              <div className="mt-4 flex gap-3">
-                <button type="button" className="px-5 py-2 rounded-md bg-white/6">Wyślij</button>
-                <button type="button" className="px-5 py-2 rounded-md border border-white/6">Zadzwoń</button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <footer className="border-t border-white/5 py-8 mt-12">
-          <div className="max-w-6xl mx-auto px-5 text-neutral-400 text-sm">© {new Date().getFullYear()} Caroseryjni — All rights reserved.</div>
-        </footer>
-      </main>
-
-      {/* Lightbox modal */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <Lightbox images={images} index={lightboxIndex} onClose={() => setLightboxIndex(null)} onPrev={() => setLightboxIndex(i => (i - 1 + images.length) % images.length)} onNext={() => setLightboxIndex(i => (i + 1) % images.length)} />
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-function ParallaxHero({ image }) {
-  const ref = useRef();
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const onScroll = () => {
-      const rect = el.getBoundingClientRect();
-      const offset = Math.min(Math.max(-rect.top / 3, -100), 100);
-      el.style.transform = `translateY(${offset}px)`;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 -z-10">
-      <div ref={ref} className="w-full h-[60vh] md:h-[80vh] transform transition-transform duration-300">
-        <div className="w-full h-full overflow-hidden">
-          <img src={image} alt="hero" className="w-full h-full object-cover brightness-75" loading="lazy" />
-        </div>
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black" />
-    </div>
-  );
-}
-
-function SectionTitle({ title, subtitle }) {
-  return (
-    <div>
-      <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
-      <div className="text-neutral-400 mt-1">{subtitle}</div>
-    </div>
-  );
-}
-
+// -------------------- useReveal (Intersection) --------------------
 function useReveal(delay = 0) {
   const ref = useRef();
   const [visible, setVisible] = useState(false);
@@ -328,6 +83,7 @@ function useReveal(delay = 0) {
   return [ref, visible];
 }
 
+// -------------------- GalleryCard --------------------
 function GalleryCard({ image, i, onOpen }) {
   const [ref, visible] = useReveal(i * 60);
   return (
@@ -352,78 +108,97 @@ function GalleryCard({ image, i, onOpen }) {
   );
 }
 
+// -------------------- ParallaxHero --------------------
+function ParallaxHero({ image }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = el.getBoundingClientRect();
+          const offset = Math.min(Math.max(-rect.top / 3, -100), 100);
+          el.style.transform = `translateY(${offset}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // image can be a string or object with src
+  const src = image?.src ?? image;
+
+  return (
+    <div className="absolute inset-0 -z-10">
+      <div ref={ref} className="w-full h-[60vh] md:h-[80vh] transform transition-transform duration-300 will-change-transform">
+        <div className="w-full h-full overflow-hidden">
+          <img src={src} alt="hero" className="w-full h-full object-cover brightness-75" loading="lazy" />
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black" />
+    </div>
+  );
+}
+
+// -------------------- Lightbox --------------------
 function Lightbox({ images, index, onClose }) {
   const [current, setCurrent] = useState(index);
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     setCurrent(index);
-    setShowButton(false);
   }, [index]);
 
   useEffect(() => {
-    setShowButton(false);
     const timer = setTimeout(() => setShowButton(true), 300);
     return () => clearTimeout(timer);
   }, [current]);
 
+  const handlePrev = useCallback(() => setCurrent(c => (c - 1 + images.length) % images.length), [images.length]);
+  const handleNext = useCallback(() => setCurrent(c => (c + 1) % images.length), [images.length]);
+
   useEffect(() => {
-    const onKey = (e) => {
+    const onKey = e => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") handlePrev();
       if (e.key === "ArrowRight") handleNext();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [current, onClose]);
+  }, [handleNext, handlePrev, onClose]);
 
-  const handlePrev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
-  const handleNext = () => setCurrent((c) => (c + 1) % images.length);
-
-  const facebookAlbumLink = images[current].fbLink;
+  const { fbLink } = images[current];
 
   return (
     <motion.div
+      role="dialog"
+      aria-modal="true"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
       onClick={onClose}
     >
-      <div className="max-w-[1200px] w-full relative" onClick={(e) => e.stopPropagation()}>
-        {/* Close / Prev / Next */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 p-2 rounded-md ring-1 ring-white/10 z-20"
-        >
-          ✕
-        </button>
-        <button
-          onClick={handlePrev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20"
-        >
-          ◀
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20"
-        >
-          ▶
-        </button>
+      <div className="max-w-[1200px] w-full relative" onClick={e => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-3 right-3 p-2 rounded-md ring-1 ring-white/10 z-20" aria-label="Zamknij">✕</button>
+        <button onClick={handlePrev} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20" aria-label="Poprzednie zdjęcie">◀</button>
+        <button onClick={handleNext} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20" aria-label="Następne zdjęcie">▶</button>
 
-        {/* Image */}
         <div className="w-full aspect-[16/9] overflow-hidden rounded-md relative">
-          <img
-            src={images[current].src}
-            alt={`full-${current}`}
-            className="w-full h-full object-contain"
-          />
-
-          {/* Przycisk FB */}
+          <img src={images[current].src} alt={`Zdjęcie ${current + 1}`} className="w-full h-full object-contain" />
           {showButton && (
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
               <a
-                href={facebookAlbumLink}
+                href={fbLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pointer-events-auto bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition"
@@ -434,12 +209,280 @@ function Lightbox({ images, index, onClose }) {
           )}
         </div>
 
-        {/* Info */}
         <div className="mt-3 flex items-center justify-between text-neutral-300">
           <div>Zdjęcie {current + 1} / {images.length}</div>
           <div className="text-sm text-neutral-400">Kliknij poza obraz, aby zamknąć</div>
         </div>
       </div>
     </motion.div>
+  );
+}
+
+// -------------------- SectionTitle --------------------
+function SectionTitle({ title, subtitle }) {
+  return (
+    <div>
+      <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
+      <div className="text-neutral-400 mt-1">{subtitle}</div>
+    </div>
+  );
+}
+
+// -------------------- Header --------------------
+function Header({ menuOpen, setMenuOpen }) {
+  return (
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-black/40">
+      <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <motion.div
+            layoutId="logo"
+            className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"
+          >
+            <img src="images/caroseryjni_logo_bl_wh.png" alt="Logo" className="w-[70%] h-[70%] object-contain" />
+          </motion.div>
+          <div>
+            <a href="#hero" className="text-lg font-semibold tracking-tight">Caroseryjni</a>
+            <div className="text-xs text-neutral-400">Renata & Jakub</div>
+          </div>
+        </div>
+
+        <nav className="hidden md:flex items-center gap-6 text-neutral-300">
+          <a href="#portfolio" className="hover:text-white transition">Portfolio</a>
+          <a href="#about" className="hover:text-white transition">O nas</a>
+          <a href="#contact" className="hover:text-white transition">Kontakt</a>
+          <a href="#" className="px-4 py-2 rounded-md border border-neutral-700 hover:bg-white/5 transition">Book</a>
+        </nav>
+
+        <div className="md:hidden">
+          <button
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label="menu"
+            aria-expanded={menuOpen}
+            className="p-2 rounded-md ring-1 ring-white/5"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-white/5">
+            <div className="px-5 py-4 flex flex-col gap-3 text-neutral-300">
+              <a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a>
+              <a href="#about" onClick={() => setMenuOpen(false)}>O nas</a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
+
+// -------------------- Sections used in App --------------------
+function HeroSection({ images }) {
+  return (
+    <section id="hero" className="relative overflow-hidden">
+      <ParallaxHero image={images[0]} />
+      <div className="max-w-6xl mx-auto px-5 py-24 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="space-y-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Caroseryjni - fotografia motoryzacyjna</h1>
+            <p className="text-neutral-300 max-w-xl">Klasyczne samochody w klimacie dokumentalnym i studyjnym. Sesje, restauracje, eventy. Fotografia, która oddaje duszę metalowych piękności.</p>
+            <div className="flex gap-3">
+              <a href="#portfolio" className="px-6 py-3 rounded-md bg-white/6 border border-white/6 backdrop-blur-sm hover:bg-white/8 transition">Zobacz portfolio</a>
+              <a href="#contact" className="px-6 py-3 rounded-md border border-neutral-700 hover:bg-white/5 transition">Kontakt</a>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-right md:text-left">
+            <div className="inline-block text-neutral-400">Działamy od: <strong className="text-white">2020</strong></div>
+            <div className="mt-4 text-sm text-neutral-300">Specjalizacja: Fotografia samochodowa klasyków, restauracje, sesje detailingu, reportaże z eventów.</div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PortfolioSection({ images, setLightboxIndex }) {
+  return (
+    <section id="portfolio" className="max-w-6xl mx-auto px-5 py-20">
+      <SectionTitle title="Portfolio" subtitle="Klasyczne samochody. Wybrane sesje." />
+      <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+        {images.map((image, i) => (
+          <GalleryCard key={image.src ?? i} image={image} i={i} onOpen={() => setLightboxIndex(i)} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function AboutSection({ images }) {
+  return (
+    <section id="about" className="max-w-6xl mx-auto px-5 py-20 border-t border-white/5">
+      <div className="md:flex gap-8 items-center">
+        <div className="md:w-1/2">
+          <SectionTitle title="O nas" subtitle="Fotografia klasycznych samochodów" />
+          <p className="mt-4 text-neutral-300">
+            Jesteśmy dwójką pasjonatów, których drogi życiowe skrzyżowały się w świecie fotografii i motoryzacji.
+          </p>
+
+          <div className="mt-4 space-y-2">
+            <AccordionItem
+              title="Zdjęcia z drona i krótkie formy video na social media"
+              content="Fotografujemy samochody w plenerze, zarówno statycznie jak i w ruchu."
+              media={{ type: "video", src: "/videos/sesja_plener.mp4" }}
+            />
+            <AccordionItem
+              title="Sesje plenerowe (statyczne i w ruchu)"
+              content="Tworzymy ujęcia z drona i krótkie filmy idealne do social media."
+              media={{ type: "image", src: "/images/drone_shot.jpg" }}
+            />
+            <AccordionItem
+              title="Zdjęcia wnętrz, indywidualne, biznesowe"
+              content="Profesjonalne sesje wnętrz i zdjęcia biznesowe."
+            />
+            <AccordionItem
+              title="I inne - napisz do nas"
+              content="Masz indywidualny pomysł? Skontaktuj się z nami."
+            />
+          </div>
+        </div>
+        <div className="md:w-1/2 mt-8 md:mt-0">
+          <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-white/5">
+            <img src={images[1].src} alt="about" className="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section id="contact" className="max-w-6xl mx-auto px-5 py-20">
+      <SectionTitle title="Kontakt" subtitle="Zamów sesję lub zapytaj o szczegóły" />
+      <div className="mt-8 grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <p className="text-neutral-300">Chętnie przygotujemy ofertę dopasowaną do Twojego klasyka. Poniżej znajdziesz szybki formularz (mailto) lub informacje kontaktowe.</p>
+          <div className="mt-6 space-y-3 text-neutral-300">
+            <div>📞 +48 503 363 989</div>
+            <div>✉️ <a href="mailto:kontakt@caroseryjni.pl" className="underline">kontakt@caroseryjni.pl</a></div>
+            <div>📍 Wrocław /Cała Polska /Dojazd na sesję</div>
+            <div className="flex gap-3 mt-4">
+              <a href="#" className="px-3 py-2 rounded-md border border-white/6 text-sm">Facebook</a>
+              <a href="#" className="px-3 py-2 rounded-md border border-white/6 text-sm">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <form className="bg-white/3 p-6 rounded-xl ring-1 ring-white/5">
+          <label className="block text-sm text-neutral-200">Imię i nazwisko</label>
+          <input name="name" className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" placeholder="Jan Kowalski" />
+
+          <label className="block text-sm text-neutral-200 mt-4">E-mail</label>
+          <input name="email" type="email" className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" placeholder="twoj@email.pl" />
+
+          <label className="block text-sm text-neutral-200 mt-4">Wiadomość</label>
+          <textarea name="message" className="w-full mt-2 p-3 rounded-md bg-transparent border border-white/6" rows={5} placeholder="Krótki opis projektu" />
+
+          <div className="mt-4 flex gap-3">
+            <button type="button" className="px-5 py-2 rounded-md bg-white/6">Wyślij</button>
+            <button type="button" className="px-5 py-2 rounded-md border border-white/6">Zadzwoń</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/5 py-8 mt-12">
+      <div className="max-w-6xl mx-auto px-5 text-neutral-400 text-sm">© {new Date().getFullYear()} Caroseryjni — All rights reserved.</div>
+    </footer>
+  );
+}
+
+// -------------------- App --------------------
+export default function App() {
+  const [images] = useState([
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg", fbLink: "https://facebook.com/album1" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp", fbLink: "https://facebook.com/album2" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg", fbLink: "https://facebook.com/album3" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp", fbLink: "https://facebook.com/album4" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg", fbLink: "https://facebook.com/album5" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg", fbLink: "https://facebook.com/album6" },
+  ]);
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [showIntroLogo, setShowIntroLogo] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntroLogo(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = lightboxIndex !== null ? "hidden" : "";
+  }, [lightboxIndex]);
+
+  useEffect(() => {
+    // Blokada przeciągania i prawego kliknięcia na obrazkach
+    const handleBlock = (e) => {
+      if (e.target.tagName === "IMG") {
+        e.preventDefault();       // blokuje prawy klik / context menu
+        e.stopPropagation();      // uniemożliwia dalszą propagację
+      }
+    };
+
+    document.addEventListener("contextmenu", handleBlock);
+    document.addEventListener("dragstart", handleBlock);
+
+    return () => {
+      document.removeEventListener("contextmenu", handleBlock);
+      document.removeEventListener("dragstart", handleBlock);
+    };
+  }, []);
+
+
+  return (
+    <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans">
+      <AnimatedLightEffect />
+      {showIntroLogo && (
+        <motion.div className="fixed inset-0 bg-black flex items-center justify-center z-50" initial={{ opacity: 1 }} animate={{ opacity: 1 }}>
+          <motion.img
+            src="images/caroseryjni_logo_bl_wh.png"
+            alt="Logo"
+            layoutId="logo"
+            initial={{ scale: 3 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="w-32 h-32 object-contain"
+          />
+        </motion.div>
+      )}
+
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      <main>
+        <HeroSection images={images} />
+        <PortfolioSection images={images} setLightboxIndex={setLightboxIndex} />
+        <AboutSection images={images} />
+        <ContactSection />
+        <Footer />
+      </main>
+
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <Lightbox images={images} index={lightboxIndex} onClose={() => setLightboxIndex(null)} />
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
