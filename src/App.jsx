@@ -31,13 +31,13 @@ export default function App() {
             </div>
             <div>
               <a href="#hero" className="text-lg font-semibold tracking-tight">Caroseryjni</a>
-              <div className="text-xs text-neutral-400">Classic Car Photography</div>
+              <div className="text-xs text-neutral-400">Renata & Jakub</div>
             </div>
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-neutral-300">
             <a href="#portfolio" className="hover:text-white transition">Portfolio</a>
-            <a href="#about" className="hover:text-white transition">O mnie</a>
+            <a href="#about" className="hover:text-white transition">O nas</a>
             <a href="#contact" className="hover:text-white transition">Kontakt</a>
             <a href="#" className="px-4 py-2 rounded-md border border-neutral-700 hover:bg-white/5 transition">Book</a>
           </nav>
@@ -54,7 +54,7 @@ export default function App() {
             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden border-t border-white/5">
               <div className="px-5 py-4 flex flex-col gap-3 text-neutral-300">
                 <a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a>
-                <a href="#about" onClick={() => setMenuOpen(false)}>O mnie</a>
+                <a href="#about" onClick={() => setMenuOpen(false)}>O nas</a>
                 <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
               </div>
             </motion.div>
@@ -69,7 +69,7 @@ export default function App() {
           <div className="max-w-6xl mx-auto px-5 py-24 relative z-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="space-y-6">
-                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Caroseryjni — Classic Cars</h1>
+                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">Caroseryjni - fotografia motoryzacyjna</h1>
                 <p className="text-neutral-300 max-w-xl">Klasyczne samochody w klimacie dokumentalnym i studyjnym. Sesje, restauracje, eventy. Fotografia, która oddaje duszę metalowych piękności.</p>
                 <div className="flex gap-3">
                   <a href="#portfolio" className="px-6 py-3 rounded-md bg-white/6 border border-white/6 backdrop-blur-sm hover:bg-white/8 transition">Zobacz portfolio</a>
@@ -78,7 +78,7 @@ export default function App() {
               </motion.div>
 
               <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-right md:text-left">
-                <div className="inline-block text-neutral-400">Rok założenia: <strong className="text-white">2012</strong></div>
+                <div className="inline-block text-neutral-400">Działamy od: <strong className="text-white">2020</strong></div>
                 <div className="mt-4 text-sm text-neutral-300">Specjalizacja: Fotografia samochodowa klasyków, restauracje, sesje detailingu, reportaże z eventów.</div>
               </motion.div>
             </div>
@@ -102,11 +102,12 @@ export default function App() {
           <div className="md:flex gap-8 items-center">
             <div className="md:w-1/2">
               <SectionTitle title="O mnie" subtitle="Fotografia klasycznych samochodów" />
-              <p className="mt-4 text-neutral-300">Jestem fotografem z pasją do klasyki. Dokumentuję restauracje, detale, oraz oddaję charakter pojazdów przy pomocy światła i kompozycji. Pracuję na lokalizacjach i w studio; oferuję pełne sesje oraz reportaże z eventów.</p>
+              <p className="mt-4 text-neutral-300">Jesteśmy dwójką pasjonatów, których drogi życiowe skrzyżowały się w świecie fotografii i motoryzacji.</p>
               <ul className="mt-4 text-neutral-400 list-disc pl-5">
-                <li>Sesje studyjne i plenerowe</li>
-                <li>Retusz i przygotowanie do druku</li>
-                <li>Współpraca z warsztatami i restauratorami</li>
+                <li>Sesje plenerowe (statyczne i w ruchu)</li>
+                <li>Zdjęcia z drona i krótkie formy video na social media</li>
+                <li>Zdjęcia wnętrz, indywidualne, biznesowe</li>
+                <li>I inne - napisz do nas</li>
               </ul>
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
@@ -123,12 +124,12 @@ export default function App() {
 
           <div className="mt-8 grid md:grid-cols-2 gap-8 items-start">
             <div>
-              <p className="text-neutral-300">Chętnie przygotuję ofertę dopasowaną do Twojego klasyka. Poniżej znajdziesz szybki formularz (mailto) lub informacje kontaktowe.</p>
+              <p className="text-neutral-300">Chętnie przygotujemy ofertę dopasowaną do Twojego klasyka. Poniżej znajdziesz szybki formularz (mailto) lub informacje kontaktowe.</p>
 
               <div className="mt-6 space-y-3 text-neutral-300">
-                <div>📞 +48 600 000 000</div>
+                <div>📞 +48 503 363 989</div>
                 <div>✉️ <a href="mailto:kontakt@caroseryjni.pl" className="underline">kontakt@caroseryjni.pl</a></div>
-                <div>📍 Warszawa / dojazd na sesję</div>
+                <div>📍 Wrocław /Cała Polska /Dojazd na sesję</div>
 
                 <div className="flex gap-3 mt-4">
                   <a href="#" className="px-3 py-2 rounded-md border border-white/6 text-sm">Facebook</a>
