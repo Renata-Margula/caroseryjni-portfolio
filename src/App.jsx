@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // -------------------- Animated Light Effect --------------------
 function AnimatedLightEffect() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none">
       <motion.div
         className="absolute top-0 left-[-50%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
         animate={{
