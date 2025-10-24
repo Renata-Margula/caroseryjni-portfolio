@@ -2,19 +2,44 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// -------------------- Animated Light Effect --------------------
+function AnimatedLightEffect() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <motion.div
+        className="absolute top-0 left-[-50%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        animate={{
+          x: ["-50%", "50%"],
+          opacity: [0, 0.6, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          repeatDelay: 5,
+          ease: "easeInOut",
+        }}
+      />
+    </div>
+  );
+}
 export default function App() {
-  
+
   const [images] = useState([
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
+    "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [showIntroLogo, setShowIntroLogo] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowIntroLogo(false), 1500); // po 1.5s logo dociera do headera
+    return () => clearTimeout(timer);
+  }, []);
 
 
   useEffect(() => {
@@ -23,17 +48,40 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans">
+      <AnimatedLightEffect />
+      {showIntroLogo && (
+        <motion.div
+          className="fixed inset-0 bg-black flex items-center justify-center z-50"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+        >
+          <motion.img
+            src="images/caroseryjni_logo_bl_wh.png"
+            alt="Logo"
+            layoutId="logo" // łączymy z headerem
+            initial={{ scale: 3 }} // duże na środku
+            animate={{ scale: 1 }} // zmniejsza się do headera
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="w-32 h-32 object-contain"
+          />
+        </motion.div>
+      )}
+
       <header className="sticky top-0 z-50 backdrop-blur-md bg-black/40">
         <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"> 
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/><path d="M6 8l4-4 4 4" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
+            <motion.div
+              layoutId="logo"
+              className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"
+            >
+              <img src="images/caroseryjni_logo_bl_wh.png" alt="Logo" className="w-[70%] h-[70%] object-contain" />
+            </motion.div>
             <div>
               <a href="#hero" className="text-lg font-semibold tracking-tight">Caroseryjni</a>
               <div className="text-xs text-neutral-400">Renata & Jakub</div>
             </div>
           </div>
+
 
           <nav className="hidden md:flex items-center gap-6 text-neutral-300">
             <a href="#portfolio" className="hover:text-white transition">Portfolio</a>
@@ -44,7 +92,7 @@ export default function App() {
 
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(v => !v)} aria-label="menu" className="p-2 rounded-md ring-1 ring-white/5">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
           </div>
         </div>
