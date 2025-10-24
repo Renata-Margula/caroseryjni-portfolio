@@ -22,15 +22,50 @@ function AnimatedLightEffect() {
     </div>
   );
 }
+function AccordionItem({ title, content, media }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-white/10 py-3">
+      <button
+        onClick={() => setIsOpen(v => !v)}
+        className="w-full text-left flex justify-between items-center text-neutral-200 font-medium"
+      >
+        {title}
+        <span>{isOpen ? "▲" : "▼"}</span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="mt-2 text-neutral-300 overflow-hidden"
+          >
+            <p>{content}</p>
+            {media && media.type === "image" && (
+              <img src={media.src} alt={title} className="mt-2 rounded-md" />
+            )}
+            {media && media.type === "video" && (
+              <video src={media.src} controls className="mt-2 w-full rounded-md" />
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function App() {
 
   const [images] = useState([
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp",
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp",
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
-    "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg", fbLink: "https://facebook.com/album1" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp", fbLink: "https://facebook.com/album2" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg", fbLink: "https://facebook.com/album3" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp", fbLink: "https://facebook.com/album4" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg", fbLink: "https://facebook.com/album5" },
+    { src: "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg", fbLink: "https://facebook.com/album6" },
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,10 +173,11 @@ export default function App() {
           <SectionTitle title="Portfolio" subtitle="Klasyczne samochody. Wybrane sesje." />
 
           <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-            {images.map((src, i) => (
-              <GalleryCard key={i} src={src} i={i} onOpen={() => setLightboxIndex(i)} />
+            {images.map((image, i) => (
+              <GalleryCard key={i} image={image} i={i} onOpen={() => setLightboxIndex(i)} />
             ))}
           </div>
+
 
         </section>
 
@@ -149,18 +185,35 @@ export default function App() {
         <section id="about" className="max-w-6xl mx-auto px-5 py-20 border-t border-white/5">
           <div className="md:flex gap-8 items-center">
             <div className="md:w-1/2">
-              <SectionTitle title="O mnie" subtitle="Fotografia klasycznych samochodów" />
-              <p className="mt-4 text-neutral-300">Jesteśmy dwójką pasjonatów, których drogi życiowe skrzyżowały się w świecie fotografii i motoryzacji.</p>
-              <ul className="mt-4 text-neutral-400 list-disc pl-5">
-                <li>Sesje plenerowe (statyczne i w ruchu)</li>
-                <li>Zdjęcia z drona i krótkie formy video na social media</li>
-                <li>Zdjęcia wnętrz, indywidualne, biznesowe</li>
-                <li>I inne - napisz do nas</li>
-              </ul>
+              <SectionTitle title="O nas" subtitle="Fotografia klasycznych samochodów" />
+              <p className="mt-4 text-neutral-300">
+                Jesteśmy dwójką pasjonatów, których drogi życiowe skrzyżowały się w świecie fotografii i motoryzacji.
+              </p>
+
+              <div className="mt-4 space-y-2">
+                <AccordionItem
+                  title="Zdjęcia z drona i krótkie formy video na social media"
+                  content="Fotografujemy samochody w plenerze, zarówno statycznie jak i w ruchu."
+                  media={{ type: "video", src: "/videos/sesja_plener.mp4" }}
+                />
+                <AccordionItem
+                  title="Sesje plenerowe (statyczne i w ruchu)"
+                  content="Tworzymy ujęcia z drona i krótkie filmy idealne do social media."
+                  media={{ type: "image", src: "/images/drone_shot.jpg" }}
+                />
+                <AccordionItem
+                  title="Zdjęcia wnętrz, indywidualne, biznesowe"
+                  content="Profesjonalne sesje wnętrz i zdjęcia biznesowe."
+                />
+                <AccordionItem
+                  title="I inne - napisz do nas"
+                  content="Masz indywidualny pomysł? Skontaktuj się z nami."
+                />
+              </div>
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
               <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-white/5">
-                <img src={images[1]} alt="about" className="w-full h-full object-cover" loading="lazy" />
+                <img src={images[1].src} alt="about" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -275,48 +328,116 @@ function useReveal(delay = 0) {
   return [ref, visible];
 }
 
-function GalleryCard({ src, i, onOpen }) {
+function GalleryCard({ image, i, onOpen }) {
   const [ref, visible] = useReveal(i * 60);
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={visible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="rounded-lg overflow-hidden">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={visible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+      className="rounded-lg overflow-hidden"
+    >
       <button onClick={onOpen} className="group block w-full h-full focus:outline-none">
         <div className="w-full aspect-[4/3] overflow-hidden">
-          <img src={src} alt={`photo-${i}`} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <img
+            src={image.src}
+            alt={`photo-${i}`}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
         </div>
       </button>
     </motion.div>
   );
 }
 
-function Lightbox({ images, index, onClose, onPrev, onNext }) {
+function Lightbox({ images, index, onClose }) {
   const [current, setCurrent] = useState(index);
-  useEffect(() => setCurrent(index), [index]);
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    setCurrent(index);
+    setShowButton(false);
+  }, [index]);
+
+  useEffect(() => {
+    setShowButton(false);
+    const timer = setTimeout(() => setShowButton(true), 300);
+    return () => clearTimeout(timer);
+  }, [current]);
+
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") onPrev();
-      if (e.key === "ArrowRight") onNext();
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, onPrev, onNext]);
+  }, [current, onClose]);
+
+  const handlePrev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
+  const handleNext = () => setCurrent((c) => (c + 1) % images.length);
+
+  const facebookAlbumLink = images[current].fbLink;
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-      <div className="max-w-[1200px] w-full">
-        <div className="relative">
-          <button onClick={onClose} className="absolute top-3 right-3 p-2 rounded-md ring-1 ring-white/10">✕</button>
-          <button onClick={() => { onPrev(); setCurrent(c => (c - 1 + images.length) % images.length); }} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10">◀</button>
-          <button onClick={() => { onNext(); setCurrent(c => (c + 1) % images.length); }} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10">▶</button>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+      onClick={onClose}
+    >
+      <div className="max-w-[1200px] w-full relative" onClick={(e) => e.stopPropagation()}>
+        {/* Close / Prev / Next */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 p-2 rounded-md ring-1 ring-white/10 z-20"
+        >
+          ✕
+        </button>
+        <button
+          onClick={handlePrev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20"
+        >
+          ◀
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20"
+        >
+          ▶
+        </button>
 
-          <div className="w-full aspect-[16/9] overflow-hidden rounded-md">
-            <img src={images[current]} alt={`full-${current}`} className="w-full h-full object-contain" />
-          </div>
+        {/* Image */}
+        <div className="w-full aspect-[16/9] overflow-hidden rounded-md relative">
+          <img
+            src={images[current].src}
+            alt={`full-${current}`}
+            className="w-full h-full object-contain"
+          />
 
-          <div className="mt-3 flex items-center justify-between text-neutral-300">
-            <div>Zdjęcie {current + 1} / {images.length}</div>
-            <div className="text-sm text-neutral-400">Kliknij poza obraz, aby zamknąć</div>
-          </div>
+          {/* Przycisk FB */}
+          {showButton && (
+            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+              <a
+                href={facebookAlbumLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pointer-events-auto bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition"
+              >
+                Zobacz album na Facebooku
+              </a>
+            </div>
+          )}
+        </div>
+
+        {/* Info */}
+        <div className="mt-3 flex items-center justify-between text-neutral-300">
+          <div>Zdjęcie {current + 1} / {images.length}</div>
+          <div className="text-sm text-neutral-400">Kliknij poza obraz, aby zamknąć</div>
         </div>
       </div>
     </motion.div>
