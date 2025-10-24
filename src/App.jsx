@@ -6,9 +6,9 @@ export default function App() {
   
   const [images] = useState([
   "images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp",
   "images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg",
-  "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.jpg",
+  "images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp",
   "images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg",
   "images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg",
   ]);
