@@ -7,16 +7,8 @@ function AnimatedLightEffect() {
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
       <motion.div
         className="absolute top-0 left-[-50%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        animate={{
-          x: ["-50%", "50%"],
-          opacity: [0, 0.6, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          repeatDelay: 5,
-          ease: "easeInOut",
-        }}
+        animate={{ x: ["-50%", "50%"], opacity: [0, 0.6, 0] }}
+        transition={{ duration: 6, repeat: Infinity, repeatDelay: 5, ease: "easeInOut" }}
       />
     </div>
   );
@@ -134,7 +126,6 @@ function ParallaxHero({ image }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // image can be a string or object with src
   const src = image?.src ?? image;
 
   return (
@@ -152,22 +143,21 @@ function ParallaxHero({ image }) {
 // -------------------- Lightbox --------------------
 function Lightbox({ images, index, onClose }) {
   const [current, setCurrent] = useState(index);
+  const [direction, setDirection] = useState(0);
   const [showButton, setShowButton] = useState(false);
 
-  useEffect(() => {
-    setCurrent(index);
-  }, [index]);
+  useEffect(() => setCurrent(index), [index]);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowButton(true), 300);
     return () => clearTimeout(timer);
   }, [current]);
 
-  const handlePrev = useCallback(() => setCurrent(c => (c - 1 + images.length) % images.length), [images.length]);
-  const handleNext = useCallback(() => setCurrent(c => (c + 1) % images.length), [images.length]);
+  const handlePrev = useCallback(() => { setDirection(-1); setCurrent(c => (c - 1 + images.length) % images.length); }, [images.length]);
+  const handleNext = useCallback(() => { setDirection(1); setCurrent(c => (c + 1) % images.length); }, [images.length]);
 
   useEffect(() => {
-    const onKey = e => {
+    const onKey = (e) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowLeft") handlePrev();
       if (e.key === "ArrowRight") handleNext();
@@ -175,6 +165,12 @@ function Lightbox({ images, index, onClose }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [handleNext, handlePrev, onClose]);
+
+  const variants = {
+    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir) => ({ x: dir < 0 ? 300 : -300, opacity: 0 }),
+  };
 
   const { fbLink } = images[current];
 
@@ -194,7 +190,36 @@ function Lightbox({ images, index, onClose }) {
         <button onClick={handleNext} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md ring-1 ring-white/10 z-20" aria-label="Następne zdjęcie">▶</button>
 
         <div className="w-full aspect-[16/9] overflow-hidden rounded-md relative">
-          <img src={images[current].src} alt={`Zdjęcie ${current + 1}`} className="w-full h-full object-contain" />
+          <AnimatePresence custom={direction} initial={false}>
+            <motion.img
+              key={current}
+              src={images[current].src}
+              alt={`Zdjęcie ${current + 1}`}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="w-full h-full object-contain absolute top-0 left-0"
+              loading="lazy"
+            />
+          </AnimatePresence>
+
+          {showButton && (
+            <div className="absolute inset-x-0 bottom-3 flex justify-center gap-2 z-20">
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-12 h-8 rounded overflow-hidden border-2 ${i === current ? "border-white" : "border-transparent"}`}
+                >
+                  <img src={img.src} alt={`thumb-${i}`} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+          )}
+
           {showButton && (
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
               <a
@@ -282,7 +307,7 @@ function Header({ menuOpen, setMenuOpen }) {
   );
 }
 
-// -------------------- Sections used in App --------------------
+// -------------------- Sections --------------------
 function HeroSection({ images }) {
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -332,24 +357,10 @@ function AboutSection({ images }) {
           </p>
 
           <div className="mt-4 space-y-2">
-            <AccordionItem
-              title="Zdjęcia z drona i krótkie formy video na social media"
-              content="Fotografujemy samochody w plenerze, zarówno statycznie jak i w ruchu."
-              media={{ type: "video", src: "/videos/sesja_plener.mp4" }}
-            />
-            <AccordionItem
-              title="Sesje plenerowe (statyczne i w ruchu)"
-              content="Tworzymy ujęcia z drona i krótkie filmy idealne do social media."
-              media={{ type: "image", src: "/images/drone_shot.jpg" }}
-            />
-            <AccordionItem
-              title="Zdjęcia wnętrz, indywidualne, biznesowe"
-              content="Profesjonalne sesje wnętrz i zdjęcia biznesowe."
-            />
-            <AccordionItem
-              title="I inne - napisz do nas"
-              content="Masz indywidualny pomysł? Skontaktuj się z nami."
-            />
+            <AccordionItem title="Zdjęcia z drona i krótkie formy video na social media" content="Fotografujemy samochody w plenerze, zarówno statycznie jak i w ruchu." media={{ type: "video", src: "/videos/sesja_plener.mp4" }} />
+            <AccordionItem title="Sesje plenerowe (statyczne i w ruchu)" content="Tworzymy ujęcia z drona i krótkie filmy idealne do social media." media={{ type: "image", src: "/images/drone_shot.jpg" }} />
+            <AccordionItem title="Zdjęcia wnętrz, indywidualne, biznesowe" content="Profesjonalne sesje wnętrz i zdjęcia biznesowe." />
+            <AccordionItem title="I inne - napisz do nas" content="Masz indywidualny pomysł? Skontaktuj się z nami." />
           </div>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
@@ -433,11 +444,10 @@ export default function App() {
   }, [lightboxIndex]);
 
   useEffect(() => {
-    // Blokada przeciągania i prawego kliknięcia na obrazkach
     const handleBlock = (e) => {
       if (e.target.tagName === "IMG") {
-        e.preventDefault();       // blokuje prawy klik / context menu
-        e.stopPropagation();      // uniemożliwia dalszą propagację
+        e.preventDefault();
+        e.stopPropagation();
       }
     };
 
@@ -450,10 +460,10 @@ export default function App() {
     };
   }, []);
 
-
   return (
     <div className="min-h-screen bg-neutral-900 text-neutral-100 font-sans">
       <AnimatedLightEffect />
+
       {showIntroLogo && (
         <motion.div className="fixed inset-0 bg-black flex items-center justify-center z-50" initial={{ opacity: 1 }} animate={{ opacity: 1 }}>
           <motion.img
