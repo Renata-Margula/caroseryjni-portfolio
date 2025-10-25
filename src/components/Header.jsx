@@ -12,7 +12,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
             className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"
           >
             <img
-              src="/images/caroseryjni_logo_bl_wh.png"
+              src="/caroseryjni-portfolio/images/caroseryjni_logo_bl_wh.png"
               alt="Logo"
               className="w-[70%] h-[70%] object-contain"
             />

@@ -33,7 +33,7 @@ export default function App() {
             exit={{ opacity: 0 }}
           >
             <motion.img
-              src="/images/caroseryjni_logo_bl_wh.png"
+              src="/caroseryjni-portfolio/images/caroseryjni_logo_bl_wh.png"
               alt="Logo"
               initial={{ scale: 3 }}
               animate={{ scale: 1 }}

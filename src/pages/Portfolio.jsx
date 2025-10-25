@@ -101,13 +101,14 @@ function Lightbox({ images, index, onClose }) {
 
 export default function Portfolio() {
   const images = [
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg", fbLink: "https://facebook.com/album1" },
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp", fbLink: "https://facebook.com/album2" },
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg", fbLink: "https://facebook.com/album3" },
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp", fbLink: "https://facebook.com/album4" },
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg", fbLink: "https://facebook.com/album5" },
-    { src: "/images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg", fbLink: "https://facebook.com/album6" },
-  ];
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna1.jpg", fbLink: "https://facebook.com/album1" },
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna2.webp", fbLink: "https://facebook.com/album2" },
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna3.jpg", fbLink: "https://facebook.com/album3" },
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna4.webp", fbLink: "https://facebook.com/album4" },
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna5.jpg", fbLink: "https://facebook.com/album5" },
+  { src: "/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna6.jpg", fbLink: "https://facebook.com/album6" },
+];
+
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
