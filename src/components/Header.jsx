@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Header({ menuOpen, setMenuOpen }) {
   return (
@@ -10,20 +11,24 @@ export default function Header({ menuOpen, setMenuOpen }) {
             layoutId="logo"
             className="w-10 h-10 rounded-md bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center ring-1 ring-white/5"
           >
-            <img src="/images/caroseryjni_logo_bl_wh.png" alt="Logo" className="w-[70%] h-[70%] object-contain" />
+            <img
+              src="/images/caroseryjni_logo_bl_wh.png"
+              alt="Logo"
+              className="w-[70%] h-[70%] object-contain"
+            />
           </motion.div>
           <div>
-            <a href="/" className="text-lg font-semibold tracking-tight">Caroseryjni</a>
+            <Link to="/" className="text-lg font-semibold tracking-tight">Caroseryjni</Link>
             <div className="text-xs text-neutral-400">Renata & Jakub</div>
           </div>
         </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6 text-neutral-300">
-          <a href="/" className="hover:text-white transition">Home</a>
-          <a href="/portfolio" className="hover:text-white transition">Portfolio</a>
-          <a href="/about" className="hover:text-white transition">O nas</a>
-          <a href="/contact" className="hover:text-white transition">Kontakt</a>
+          <Link to="/" className="hover:text-white transition">Home</Link>
+          <Link to="/portfolio" className="hover:text-white transition">Portfolio</Link>
+          <Link to="/about" className="hover:text-white transition">O nas</Link>
+          <Link to="/contact" className="hover:text-white transition">Kontakt</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -51,10 +56,10 @@ export default function Header({ menuOpen, setMenuOpen }) {
             className="md:hidden border-t border-white/5"
           >
             <div className="px-5 py-4 flex flex-col gap-3 text-neutral-300">
-              <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
-              <a href="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a>
-              <a href="/about" onClick={() => setMenuOpen(false)}>O nas</a>
-              <a href="/contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
+              <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>O nas</Link>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>Kontakt</Link>
             </div>
           </motion.div>
         )}

@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header.jsx";
 import AnimatedLightEffect from "./components/AnimatedLightEffect.jsx";
@@ -24,22 +24,25 @@ export default function App() {
       <AnimatedLightEffect />
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-      {showIntroLogo && (
-        <motion.div
-          className="fixed inset-0 bg-black flex items-center justify-center z-50"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-        >
-          <motion.img
-            src="/images/caroseryjni_logo_bl_wh.png"
-            alt="Logo"
-            initial={{ scale: 3 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="w-32 h-32 object-contain"
-          />
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {showIntroLogo && (
+          <motion.div
+            className="fixed inset-0 bg-black flex items-center justify-center z-50"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.img
+              src="/images/caroseryjni_logo_bl_wh.png"
+              alt="Logo"
+              initial={{ scale: 3 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="w-32 h-32 object-contain"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Routes>
         <Route path="/" element={<Home />} />
