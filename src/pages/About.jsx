@@ -36,7 +36,7 @@ export default function About() {
         <div className="md:w-1/2 mt-8 md:mt-0">
           <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-lg ring-1 ring-white/5">
             <img
-              src="/images/caroseryjni_portfolio_fotografia_motoryzacyjna11.webp"
+              src="/caroseryjni-portfolio/images/caroseryjni_portfolio_fotografia_motoryzacyjna11.webp"
               alt="about"
               className="w-full h-full object-cover"
               loading="lazy"
