@@ -55,6 +55,7 @@ const EVENTS = {
     { title: "Szlakiem sudeckich zamków – dzień 1", link: "https://facebook.com/events/s/szlakiem-sudeckich-zamkow/1594137225075869/" },
   ],
   "2026-03-07": [
+    { title: "Rajd Pań", link: "https://www.facebook.com/share/1CNyYAdD9N/" },
     { title: "Auto Moto Retro PARMA", link: "https://automotoretro.it/" },
     { title: "Szlakiem sudeckich zamków – dzień 2", link: "https://facebook.com/events/s/szlakiem-sudeckich-zamkow/1594137225075869/" },
   ],
