@@ -35,6 +35,7 @@ const EVENTS = {
   ],
   "2026-02-14": [
     { title: "Wrocławska Giełda Modeli Samochodowych 3! Edycja Walentynki", link: "https://facebook.com/events/s/wroc%C5%82awska-gie%C5%82da-modeli-samoc/2288256764984847/" },
+    { title: "Fast Zone 4 – Drift Taxi Car Show", link: "https://www.facebook.com/events/s/fast-zone-4-drift-taxi-car-sho/1219549447214762/" },
   ],
   "2026-02-19": [
     { title: "RETRO CLASSICS® MESSE STUTTGART – dzień 1", link: "https://www.retro-classics.de/" },
@@ -84,6 +85,9 @@ const EVENTS = {
   "2026-04-04": [
     { title: "Coffee and Cars Wielkanoc 2026", link: "https://facebook.com/events/s/coffee-and-cars-wielkanoc-2026/775840082168307/" },
   ],
+  "2026-04-10": [
+    { title: "Piknik Klasycznych VW i Porsche", link: "https://www.facebook.com/events/s/piknik-klasycznych-vw-i-porsch/1513978013220587/" },
+  ],
   "2026-04-11": [
     { title: "I runda Via Classica Cup", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "II Meeting Modelarski Pojazdów Cywilnych + Zlot Klasyków", link: "https://facebook.com/events/s/ii-meeting-modelarski-pojazdow/1464702117913664/" },
@@ -94,6 +98,7 @@ const EVENTS = {
   ],
   "2026-04-17": [
     { title: "Anantara Concorso Roma – dzień 2", link: "https://www.facebook.com/AnantaraConcorsoRoma" },
+    { title: "Wiosenne Spotkanie Citroën Oldtimer Club Polska", link: "https://www.facebook.com/events/s/wiosenne-spotkanie-citroen-old/1728668441442280/" },
   ],
   "2026-04-18": [
     { title: "Zlot klasycznej motoryzacji - start sezonu", link: "https://www.facebook.com/events/1725509802183080/" },
@@ -103,6 +108,9 @@ const EVENTS = {
   ],
   "2026-04-19": [
     { title: "Anantara Concorso Roma – dzień 4", link: "https://www.facebook.com/AnantaraConcorsoRoma" },
+    { title: "Pierwszy Zlot Wałbrzyskich Klasyków Rozpoczęcie Sezonu 2026", link: "https://facebook.com/events/s/pierwszy-zlot-wa%C5%82brzyskich-kla/26292254610367490/" },
+    { title: "VIII Zlot Pojazdów Klasycznych w Browarze Turek", link: "https://www.facebook.com/events/s/viii-zlot-pojazdow-klasycznych/4265041637150831/" },
+    { title: "Porsche Day 2026", link: "https://www.facebook.com/events/s/porsche-day-2026/1202321118642552/" },
   ],
   "2026-04-23": [
     { title: "Poznań Motor Show – dzień 1", link: "https://www.facebook.com/PoznanMotorShow/" },
@@ -257,20 +265,24 @@ const EVENTS = {
   ],
   "2026-06-25": [
     { title: "37th Coupe des Alpes 2026 – dzień 1", link: "https://www.rallystory.com/rallyes/coupe-des-alpes-2026/" },
+    { title: "La Leggenda di Bassano – dzień 1", link: "https://www.facebook.com/laleggendadibassano" },
   ],
   "2026-06-26": [
     { title: "37th Coupe des Alpes 2026 – dzień 2", link: "https://www.rallystory.com/rallyes/coupe-des-alpes-2026/" },
+    { title: "La Leggenda di Bassano – dzień 2", link: "https://www.facebook.com/laleggendadibassano" },
     { title: "Supercar Owners Circle x Classic Driver – dzień 1", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 1", link: "https://www.theaurora.se/" },
   ],
   "2026-06-27": [
     { title: "37th Coupe des Alpes 2026 – dzień 3", link: "https://www.rallystory.com/rallyes/coupe-des-alpes-2026/" },
+    { title: "La Leggenda di Bassano – dzień 3", link: "https://www.facebook.com/laleggendadibassano" },
     { title: "ULTRACE POLAND 2026 – dzień 1", link: "https://facebook.com/events/s/ultrace-poland-2026-eternal-cu/1898818380747841/" },
     { title: "Supercar Owners Circle x Classic Driver – dzień 2", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 2", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 1", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
   ],
   "2026-06-28": [
+    { title: "La Leggenda di Bassano – dzień 4", link: "https://www.facebook.com/laleggendadibassano" },
     { title: "ULTRACE POLAND 2026 – dzień 2", link: "https://facebook.com/events/s/ultrace-poland-2026-eternal-cu/1898818380747841/" },
     { title: "Supercar Owners Circle x Classic Driver – dzień 3", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 3", link: "https://www.theaurora.se/" },
@@ -367,6 +379,7 @@ const EVENTS = {
   ],
   "2026-08-30": [
     { title: "Polski Rajd Legend – dzień 2", link: "http://prl.org.pl/" },
+    { title: "Porsche Meeting 2026", link: "https://www.facebook.com/events/s/porsche-meeting-2026/1503878627681086/" },
   ],
   "2026-09-11": [
     { title: "Bernina GranTurismo – dzień 1", link: "https://www.facebook.com/berninagranturismo" },
