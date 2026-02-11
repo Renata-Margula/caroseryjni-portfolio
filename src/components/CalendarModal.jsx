@@ -337,10 +337,27 @@ const EVENTS = {
   "2026-07-25": [
     { title: "34. Ennstal-Classic – dzień 4", link: "https://www.facebook.com/951037973804467" },
     { title: "JAPFEST 2026 TOR POZNAŃ – dzień 2", link: "https://facebook.com/events/s/japfest-2026-tor-poznan-13th-i/1360288055745793/" },
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 1", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
   ],
   "2026-07-26": [
     { title: "Wzlotowisko 2k26", link: "https://www.facebook.com/events/gniezno/wzlotowisko-2k26/4099196460336037/" },
     { title: "JAPFEST 2026 TOR POZNAŃ – dzień 3", link: "https://facebook.com/events/s/japfest-2026-tor-poznan-13th-i/1360288055745793/" },
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 2", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
+  ],
+  "2026-07-27": [
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 3", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
+  ],
+  "2026-07-28": [
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 4", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
+  ],
+  "2026-07-29": [
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 5", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
+  ],
+  "2026-07-30": [
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 6", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
+  ],
+  "2026-07-31": [
+    { title: "VI Rajd Tylko dla Zuchwałych – dzień 7", link: "https://facebook.com/events/s/vi-rajd-tylko-dla-zuchwa%C5%82ych/1874301439841108/" },
   ],
   "2026-08-01": [
     { title: "XVIII Zlot Zabytkowych Pojazdów – dzień 1", link: "https://www.miasteczko-galicyjskie.pl/?page_id=2903&fbclid=IwAR2i2JGC5xU6Q0yd7IbTsDcRy2XKbA6Gr6BW1nay5cwHi8JgshAxIqALpfM" },
