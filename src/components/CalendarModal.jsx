@@ -158,10 +158,12 @@ const EVENTS = {
     { title: "Concorso d'Eleganza Villa d'Este – dzień 2", link: "https://concorsodeleganzavilladeste.com/blocks/home" },
     { title: "FuoriConcorso – dzień 1", link: "https://www.fuoriconcorso.org/" },
     { title: "BANZAI Car Event 2026 Łódź", link: "https://facebook.com/events/s/banzai-car-event-2026-%C5%82odz-ogr/2009463839840856/" },
+    { title: "1. Gliwicki Classic Sprint – dzień 1", link: "https://facebook.com/events/s/1-gliwicki-classic-sprint/1693876368719649/" },
   ],
   "2026-05-17": [
     { title: "Concorso d'Eleganza Villa d'Este – dzień 3", link: "https://concorsodeleganzavilladeste.com/blocks/home" },
     { title: "FuoriConcorso – dzień 2", link: "https://www.fuoriconcorso.org/" },
+    { title: "1. Gliwicki Classic Sprint – dzień 2", link: "https://facebook.com/events/s/1-gliwicki-classic-sprint/1693876368719649/" },
   ],
   "2026-05-19": [
     { title: "Autotechnika Expo 2026 – dzień 1", link: "https://facebook.com/events/s/autotechnika-expo-2026/1252814263064224/" },
