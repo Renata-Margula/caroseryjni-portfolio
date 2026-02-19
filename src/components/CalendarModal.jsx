@@ -125,17 +125,33 @@ const EVENTS = {
     { title: "VII Zlot Klasyków Rozruch", link: "https://www.facebook.com/events/1113615016565120/" },
     { title: "Grand Prix de Monaco Historique – dzień 2", link: "https://www.monacograndprixhistoric.com/" },
     { title: "AUTOPIA – dzień 1", link: "https://autopia.events/" },
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 1", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
   ],
   "2026-04-26": [
     { title: "Poznań Motor Show – dzień 4", link: "https://www.facebook.com/PoznanMotorShow/" },
     { title: "Grand Prix de Monaco Historique – dzień 3", link: "https://www.monacograndprixhistoric.com/" },
     { title: "AUTOPIA – dzień 2", link: "https://autopia.events/" },
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 2", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
     { title: "10-lecie Jeleniogórskich Klasyków", link: "https://facebook.com/events/s/10-lecie-jeleniogorskich-klasy/1127714499440196/" },
+  ],
+  "2026-04-27": [
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 3", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
+  ],
+  "2026-04-28": [
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 4", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
+  ],
+  "2026-04-29": [
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 5", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
+  ],
+  "2026-04-30": [
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 6", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
   ],
   "2026-05-01": [
     { title: "RETRO RAJD 2", link: "https://facebook.com/events/s/retro-rajd-2/1261082769376854/" },
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 7", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
   ],
   "2026-05-02": [
+    { title: "XII Europejski Rajd Syren i Warszaw – dzień 8", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
     { title: "VI RAJD POLONEZA – dzień 1", link: "https://facebook.com/events/s/vi-rajd-poloneza-2-3-maja-2026/1621288888545760/" },
   ],
   "2026-05-03": [
