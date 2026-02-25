@@ -58,6 +58,7 @@ const EVENTS = {
     { title: "Rajd Pań", link: "https://www.facebook.com/share/1CNyYAdD9N/" },
     { title: "Auto Moto Retro PARMA", link: "https://automotoretro.it/" },
     { title: "Szlakiem sudeckich zamków – dzień 2", link: "https://facebook.com/events/s/szlakiem-sudeckich-zamkow/1594137225075869/" },
+    { title: "Jedziemy dla Lenki – Zlot Samochodów Amerykańskich w Orzeszu", link: "https://www.facebook.com/events/s/jedziemy-dla-lenki-zlot-samoch/2017395445491922/" },
   ],
   "2026-03-08": [
     { title: "Kobieta za kółkiem VII", link: "https://facebook.com/events/s/kobieta-za-ko%C5%82kiem-vii-edycja/847104654407052/" },
@@ -167,7 +168,7 @@ const EVENTS = {
   ],
   "2026-05-15": [
     { title: "Concorso d'Eleganza Villa d'Este – dzień 1", link: "https://concorsodeleganzavilladeste.com/blocks/home" },
-    { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
+    { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH – dzień 1", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
   ],
   "2026-05-16": [
     { title: "II runda Via Classica Cup", link: "https://www.facebook.com/ViaPrestigeEurope/" },
@@ -175,20 +176,25 @@ const EVENTS = {
     { title: "FuoriConcorso – dzień 1", link: "https://www.fuoriconcorso.org/" },
     { title: "BANZAI Car Event 2026 Łódź", link: "https://facebook.com/events/s/banzai-car-event-2026-%C5%82odz-ogr/2009463839840856/" },
     { title: "1. Gliwicki Classic Sprint – dzień 1", link: "https://facebook.com/events/s/1-gliwicki-classic-sprint/1693876368719649/" },
+    { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH – dzień 2", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
   ],
   "2026-05-17": [
     { title: "Concorso d'Eleganza Villa d'Este – dzień 3", link: "https://concorsodeleganzavilladeste.com/blocks/home" },
     { title: "FuoriConcorso – dzień 2", link: "https://www.fuoriconcorso.org/" },
     { title: "1. Gliwicki Classic Sprint – dzień 2", link: "https://facebook.com/events/s/1-gliwicki-classic-sprint/1693876368719649/" },
+    { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH – dzień 3", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
   ],
   "2026-05-19": [
     { title: "Autotechnika Expo 2026 – dzień 1", link: "https://facebook.com/events/s/autotechnika-expo-2026/1252814263064224/" },
+    { title: "XIII edycja American Cars Mania – dzień 1", link: "https://www.facebook.com/events/s/xiii-edycja-american-cars-mani/3760018097627004/" },
   ],
   "2026-05-20": [
     { title: "Autotechnika Expo 2026 – dzień 2", link: "https://facebook.com/events/s/autotechnika-expo-2026/1252814263064224/" },
+    { title: "XIII edycja American Cars Mania – dzień 2", link: "https://www.facebook.com/events/s/xiii-edycja-american-cars-mani/3760018097627004/" },
   ],
   "2026-05-21": [
     { title: "Autotechnika Expo 2026 – dzień 3", link: "https://facebook.com/events/s/autotechnika-expo-2026/1252814263064224/" },
+    { title: "XIII edycja American Cars Mania – dzień 3", link: "https://www.facebook.com/events/s/xiii-edycja-american-cars-mani/3760018097627004/" },
   ],
   "2026-05-23": [
     { title: "Drift Girl Camp 2k26 – dzień 1", link: "https://facebook.com/events/s/drift-girl-camp-/1748992352722540/" },
@@ -241,22 +247,27 @@ const EVENTS = {
   "2026-06-12": [
     { title: "VIA PRESTIGE – dzień 3", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Classica Mierzęcin – dzień 2", link: "https://www.facebook.com/share/1BgXCrttuc/" },
-    { title: "ZLOT DODGE RAM POLAND 6 edycja", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
+    { title: "ZLOT DODGE RAM POLAND 6 edycja – dzień 1", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
     { title: "Mille Miglia – dzień 4", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
     { title: "1000 mil československých – dzień 3", link: "https://1000milceskoslovenskych.cz/" },
+    { title: "8. Zlot Cadillac Owners Poland – dzień 1", link: "https://www.facebook.com/events/s/8-zlot-cadillac-owners-poland/1303434384891201/" },
   ],
   "2026-06-13": [
     { title: "VIA PRESTIGE – dzień 4", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Classica Mierzęcin – dzień 3", link: "https://www.facebook.com/share/1BgXCrttuc/" },
+    { title: "ZLOT DODGE RAM POLAND 6 edycja – dzień 2", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
     { title: "Mille Miglia – dzień 5", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
     { title: "1000 mil československých – dzień 4", link: "https://1000milceskoslovenskych.cz/" },
     { title: "IV Rogoziński Zlot Motoryzacyjny", link: "https://facebook.com/events/s/iv-rogozinski-zlot-motoryzacyj/814334661643456/" },
+    { title: "8. Zlot Cadillac Owners Poland – dzień 2", link: "https://www.facebook.com/events/s/8-zlot-cadillac-owners-poland/1303434384891201/" },
   ],
   "2026-06-14": [
     { title: "Classica Mierzęcin – dzień 4", link: "https://www.facebook.com/share/1BgXCrttuc/" },
+    { title: "ZLOT DODGE RAM POLAND 6 edycja – dzień 3", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
     { title: "II zlot Klasyczne Pojazdy w Pałacowych Ogrodach", link: "https://www.facebook.com/events/2289834444762772/" },
     { title: "13 Zlot pojazdów zabytkowych i klasycznych w Mszczonowie - 'Trzynastka to nie pech'", link: "https://facebook.com/events/s/13-zlot-pojazdow-zabytkowych-i/791980083796335/" },
     { title: "III Turystyczny Rajd Pojazdów Zabytkowych Geoparku Kraina Wygasłych Wulkanów", link: "https://facebook.com/events/s/iii-turystyczny-rajd-pojazdow-/918174083890186/" },
+    { title: "8. Zlot Cadillac Owners Poland – dzień 3", link: "https://www.facebook.com/events/s/8-zlot-cadillac-owners-poland/1303434384891201/" },
   ],
   "2026-06-16": [
     { title: "FIVA World Motorcycle Rally 2026 – dzień 1", link: "https://fiva-wmr-2026.akhv.cz/" },
@@ -313,13 +324,16 @@ const EVENTS = {
   ],
   "2026-07-03": [
     { title: "Le Mans Classic Legends – dzień 2", link: "https://www.facebook.com/events/705773982437140" },
+    { title: "Zlot Amerykańskiej Motoryzacji i Klasycznej Reszty Świata – dzień 1", link: "https://www.facebook.com/events/s/zlot-amerykanskiej-motoryzacji/1436944747997237/" },
   ],
   "2026-07-04": [
     { title: "Le Mans Classic Legends – dzień 3", link: "https://www.facebook.com/events/705773982437140" },
+    { title: "Zlot Amerykańskiej Motoryzacji i Klasycznej Reszty Świata – dzień 2", link: "https://www.facebook.com/events/s/zlot-amerykanskiej-motoryzacji/1436944747997237/" },
     { title: "Concours of Elegance Germany – dzień 1", link: "https://concoursofelegancegermany.com/" },
   ],
   "2026-07-05": [
     { title: "Le Mans Classic Legends – dzień 4", link: "https://www.facebook.com/events/705773982437140" },
+    { title: "Zlot Amerykańskiej Motoryzacji i Klasycznej Reszty Świata – dzień 3", link: "https://www.facebook.com/events/s/zlot-amerykanskiej-motoryzacji/1436944747997237/" },
     { title: "Concours of Elegance Germany – dzień 2", link: "https://concoursofelegancegermany.com/" },
   ],
   "2026-07-09": [
@@ -341,6 +355,12 @@ const EVENTS = {
     { title: "British Classic Car Meeting St. Moritz – dzień 3", link: "https://www.bccm-stmoritz.ch/en/" },
     { title: "Zakręcone koła PRL - VOL. 2 – dzień 3", link: "https://facebook.com/events/s/zakrecone-ko%C5%82a-prl-vol-2/958631062996477/" },
     { title: "WAKACJE KLASYCZNIE 2026 #RETROMOTORSPORT", link: "https://facebook.com/events/s/wakacje-klasycznie-2026-retrom/3731044073868519/" },
+  ],
+  "2026-07-18": [
+    { title: "Moto Show 2k26 – dzień 1", link: "https://www.facebook.com/events/s/moto-show-2k26-moto-music-show/824677293535403/" },
+  ],
+  "2026-07-19": [
+    { title: "Moto Show 2k26 – dzień 2", link: "https://www.facebook.com/events/s/moto-show-2k26-moto-music-show/824677293535403/" },
   ],
   "2026-07-22": [
     { title: "34. Ennstal-Classic – dzień 1", link: "https://www.facebook.com/951037973804467" },
@@ -388,14 +408,18 @@ const EVENTS = {
   "2026-08-07": [
     { title: "E36 Meeting Poland 2026 – dzień 1", link: "https://facebook.com/events/s/e36-meeting-poland-2026/1334826828010304/" },
     { title: "POJECHANY ZLOT – dzień 1", link: "https://facebook.com/events/s/pojechany-zlot-2026/1192684306337899/" },
+    { title: "Baltic Drive Festival 2026 – dzień 1", link: "https://www.facebook.com/events/s/baltic-drive-festival-2026/1052101503537830/" },
   ],
   "2026-08-08": [
     { title: "E36 Meeting Poland 2026 – dzień 2", link: "https://facebook.com/events/s/e36-meeting-poland-2026/1334826828010304/" },
     { title: "POJECHANY ZLOT – dzień 2", link: "https://facebook.com/events/s/pojechany-zlot-2026/1192684306337899/" },
+    { title: "III Wolsztyński Zlot Aut z USA", link: "https://www.facebook.com/events/s/iii-wolsztynski-zlot-aut-z-usa/1398974108626923/" },
+    { title: "Baltic Drive Festival 2026 – dzień 2", link: "https://www.facebook.com/events/s/baltic-drive-festival-2026/1052101503537830/" },
   ],
   "2026-08-09": [
     { title: "E36 Meeting Poland 2026 – dzień 3", link: "https://facebook.com/events/s/e36-meeting-poland-2026/1334826828010304/" },
     { title: "POJECHANY ZLOT – dzień 3", link: "https://facebook.com/events/s/pojechany-zlot-2026/1192684306337899/" },
+    { title: "Baltic Drive Festival 2026 – dzień 3", link: "https://www.facebook.com/events/s/baltic-drive-festival-2026/1052101503537830/" },
   ],
   "2026-08-14": [
     { title: "22 Ogólnopolski Zlot 126P - Krzykawka – dzień 1", link: "https://facebook.com/events/s/22-ogolnopolski-zlot-126-krzyk/1354840892517867/" },
@@ -408,6 +432,9 @@ const EVENTS = {
   ],
   "2026-08-21": [
     { title: "XI Zlot FSO", link: "https://facebook.com/events/s/xi-zlot-fso/2506523996398991/" },
+  ],
+  "2026-08-22": [
+    { title: "Samurai Mustang 2", link: "https://www.facebook.com/events/s/samurai-mustang-2/1570462727272016/" },
   ],
   "2026-08-29": [
     { title: "Polski Rajd Legend – dzień 1", link: "http://prl.org.pl/" },
@@ -422,6 +449,7 @@ const EVENTS = {
   ],
   "2026-09-12": [
     { title: "Bernina GranTurismo – dzień 2", link: "https://www.facebook.com/berninagranturismo" },
+    { title: "Custom Fest 2026", link: "https://www.facebook.com/events/1206429088278875" },
   ],
   "2026-09-13": [
     { title: "Bernina GranTurismo – dzień 3", link: "https://www.facebook.com/berninagranturismo" },
