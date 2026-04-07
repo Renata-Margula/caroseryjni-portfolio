@@ -91,7 +91,6 @@ const EVENTS = {
     { title: "Piknik Klasycznych VW i Porsche", link: "https://www.facebook.com/events/s/piknik-klasycznych-vw-i-porsch/1513978013220587/" },
   ],
   "2026-04-11": [
-    { title: "I runda Via Classica Cup", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "II Meeting Modelarski Pojazdów Cywilnych + Zlot Klasyków", link: "https://facebook.com/events/s/ii-meeting-modelarski-pojazdow/1464702117913664/" },
     { title: "VI Rajd Wilkowyje 2026 - rozpoczęcie sezonu", link: "https://facebook.com/events/s/vi-rajd-wilkowyje-2026-rozpocz/4278167829138371/" },
   ],
@@ -171,7 +170,6 @@ const EVENTS = {
     { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH – dzień 1", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
   ],
   "2026-05-16": [
-    { title: "II runda Via Classica Cup", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Concorso d'Eleganza Villa d'Este – dzień 2", link: "https://concorsodeleganzavilladeste.com/blocks/home" },
     { title: "FuoriConcorso – dzień 1", link: "https://www.fuoriconcorso.org/" },
     { title: "BANZAI Car Event 2026 Łódź", link: "https://facebook.com/events/s/banzai-car-event-2026-%C5%82odz-ogr/2009463839840856/" },
@@ -236,18 +234,15 @@ const EVENTS = {
     { title: "Mille Miglia – dzień 1", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
   ],
   "2026-06-10": [
-    { title: "VIA PRESTIGE – dzień 1", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Mille Miglia – dzień 2", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
     { title: "1000 mil československých – dzień 1", link: "https://1000milceskoslovenskych.cz/" },
   ],
   "2026-06-11": [
-    { title: "VIA PRESTIGE – dzień 2", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Classica Mierzęcin – dzień 1", link: "https://www.facebook.com/share/1BgXCrttuc/" },
     { title: "Mille Miglia – dzień 3", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
     { title: "1000 mil československých – dzień 2", link: "https://1000milceskoslovenskych.cz/" },
   ],
   "2026-06-12": [
-    { title: "VIA PRESTIGE – dzień 3", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Classica Mierzęcin – dzień 2", link: "https://www.facebook.com/share/1BgXCrttuc/" },
     { title: "ZLOT DODGE RAM POLAND 6 edycja – dzień 1", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
     { title: "Mille Miglia – dzień 4", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
@@ -255,7 +250,6 @@ const EVENTS = {
     { title: "8. Zlot Cadillac Owners Poland – dzień 1", link: "https://www.facebook.com/events/s/8-zlot-cadillac-owners-poland/1303434384891201/" },
   ],
   "2026-06-13": [
-    { title: "VIA PRESTIGE – dzień 4", link: "https://www.facebook.com/ViaPrestigeEurope/" },
     { title: "Classica Mierzęcin – dzień 3", link: "https://www.facebook.com/share/1BgXCrttuc/" },
     { title: "ZLOT DODGE RAM POLAND 6 edycja – dzień 2", link: "https://facebook.com/events/s/zlot-dodge-ram-poland-edycja-6/1216861129652928/" },
     { title: "Mille Miglia – dzień 5", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
