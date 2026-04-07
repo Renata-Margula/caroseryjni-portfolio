@@ -183,6 +183,7 @@ const EVENTS = {
     { title: "FuoriConcorso – dzień 2", link: "https://www.fuoriconcorso.org/" },
     { title: "1. Gliwicki Classic Sprint – dzień 2", link: "https://facebook.com/events/s/1-gliwicki-classic-sprint/1693876368719649/" },
     { title: "XVI ZLOT AUT AMERYKAŃSKICH I ZABYTKOWYCH – dzień 3", link: "https://facebook.com/events/s/xvi-zlot-aut-amerykanskich-i-z/1532515697900973/" },
+    { title: "Forza 2026 – Spotkanie Miłośników Motoryzacji i Kultury Włoskiej", link: "https://facebook.com/events/s/forza-2026-spotkanie-mi%C5%82osniko/1513948686876794/" }
   ],
   "2026-05-19": [
     { title: "Autotechnika Expo 2026 – dzień 1", link: "https://facebook.com/events/s/autotechnika-expo-2026/1252814263064224/" },
@@ -198,6 +199,7 @@ const EVENTS = {
   ],
   "2026-05-23": [
     { title: "Drift Girl Camp 2k26 – dzień 1", link: "https://facebook.com/events/s/drift-girl-camp-/1748992352722540/" },
+    { title: "Autotrade X Stradale Cars&Grill", link: "https://www.facebook.com/events/s/autotrade-x-stradale-carsgrill/875298975546648/" },
   ],
   "2026-05-24": [
     { title: "Drift Girl Camp 2k26 – dzień 2", link: "https://facebook.com/events/s/drift-girl-camp-/1748992352722540/" },
@@ -286,6 +288,7 @@ const EVENTS = {
     { title: "Moto Summer 8 - FESTIVAL – dzień 2", link: "https://facebook.com/events/s/moto-summer-8-festival/1340168223807045/" },
     { title: "FIVA World Motorcycle Rally 2026 – dzień 5", link: "https://fiva-wmr-2026.akhv.cz/" },
     { title: "CSG Automotive Event 2026", link: "https://facebook.com/events/s/csg-automotive-event-2026-even/1398389201746471/" },
+    { title: "ACES Concours d'Eleganza", link: "https://www.facebook.com/events/s/aces-concours-deleganza/757867336918166/" },
   ],
   "2026-06-21": [
     { title: "Moto Summer 8 - FESTIVAL – dzień 3", link: "https://facebook.com/events/s/moto-summer-8-festival/1340168223807045/" },
@@ -310,6 +313,7 @@ const EVENTS = {
     { title: "Supercar Owners Circle x Classic Driver – dzień 2", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 2", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 1", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
+    { title: "Vrooom Classic Race Event – dzień 1", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
   ],
   "2026-06-28": [
     { title: "La Leggenda di Bassano – dzień 4", link: "https://www.facebook.com/laleggendadibassano" },
@@ -317,6 +321,7 @@ const EVENTS = {
     { title: "Supercar Owners Circle x Classic Driver – dzień 3", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 3", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 2", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
+    { title: "Vrooom Classic Race Event – dzień 2", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
   ],
   "2026-07-02": [
     { title: "OSAKA - 10th Anniversary | Zlot Fanów Japońskiej Motoryzacji", link: "https://facebook.com/events/s/osaka-10th-anniversary-i-zlot-/783523851160423/" },
