@@ -128,6 +128,7 @@ const EVENTS = {
     { title: "XII Europejski Rajd Syren i Warszaw – dzień 1", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
   ],
   "2026-04-26": [
+    { title: "Porsche i Kawa", link: "https://porschewarszawa.com.pl/okecie/porsche-i-kawa" },
     { title: "Poznań Motor Show – dzień 4", link: "https://www.facebook.com/PoznanMotorShow/" },
     { title: "Grand Prix de Monaco Historique – dzień 3", link: "https://www.monacograndprixhistoric.com/" },
     { title: "AUTOPIA – dzień 2", link: "https://autopia.events/" },
@@ -299,6 +300,7 @@ const EVENTS = {
     { title: "La Leggenda di Bassano – dzień 2", link: "https://www.facebook.com/laleggendadibassano" },
     { title: "Supercar Owners Circle x Classic Driver – dzień 1", link: "https://www.supercarownerscircle.com/about/events/" },
     { title: "Aurora Concours – dzień 1", link: "https://www.theaurora.se/" },
+    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 1", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" }
   ],
   "2026-06-27": [
     { title: "37th Coupe des Alpes 2026 – dzień 3", link: "https://www.rallystory.com/rallyes/coupe-des-alpes-2026/" },
@@ -308,6 +310,7 @@ const EVENTS = {
     { title: "Aurora Concours – dzień 2", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 1", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
     { title: "Vrooom Classic Race Event – dzień 1", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
+    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 2", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" }
   ],
   "2026-06-28": [
     { title: "La Leggenda di Bassano – dzień 4", link: "https://www.facebook.com/laleggendadibassano" },
@@ -316,6 +319,7 @@ const EVENTS = {
     { title: "Aurora Concours – dzień 3", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 2", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
     { title: "Vrooom Classic Race Event – dzień 2", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
+    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 3", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" }
   ],
   "2026-07-02": [
     { title: "OSAKA - 10th Anniversary | Zlot Fanów Japońskiej Motoryzacji", link: "https://facebook.com/events/s/osaka-10th-anniversary-i-zlot-/783523851160423/" },
