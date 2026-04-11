@@ -199,6 +199,7 @@ const EVENTS = {
   "2026-05-23": [
     { title: "Drift Girl Camp 2k26 – dzień 1", link: "https://facebook.com/events/s/drift-girl-camp-/1748992352722540/" },
     { title: "Autotrade X Stradale Cars&Grill", link: "https://www.facebook.com/events/s/autotrade-x-stradale-carsgrill/875298975546648/" },
+    { title: "Pakosław Classic Garden", link: "https://www.facebook.com/events/s/pakos%C5%82aw-classic-garden/1452127669655901" },
   ],
   "2026-05-24": [
     { title: "Drift Girl Camp 2k26 – dzień 2", link: "https://facebook.com/events/s/drift-girl-camp-/1748992352722540/" },
@@ -438,6 +439,7 @@ const EVENTS = {
   ],
   "2026-08-22": [
     { title: "Samurai Mustang 2", link: "https://www.facebook.com/events/s/samurai-mustang-2/1570462727272016/" },
+    { title: "Sweden Wheels 2026 - III Zlot Miłośników Szwedzkiej Motoryzacji", link: "https://www.facebook.com/events/s/sweden-wheels-2026-iii-zlot-mi/788931677568625/" },
   ],
   "2026-08-29": [
     { title: "Polski Rajd Legend – dzień 1", link: "http://prl.org.pl/" },
