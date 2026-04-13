@@ -128,6 +128,7 @@ const EVENTS = {
     { title: "XII Europejski Rajd Syren i Warszaw – dzień 1", link: "https://facebook.com/events/s/xii-europejski-rajd-syren-i-wa/1982465019821706/" },
   ],
   "2026-04-26": [
+    { title: "Wiosenny Cruising - Turystyczny Rajd Pojazdów Zabytkowych i Youngtimerów 2026", link: "https://facebook.com/events/s/wiosenny-cruising-turystyczny-/1868267980557729/" },
     { title: "Porsche i Kawa", link: "https://porschewarszawa.com.pl/okecie/porsche-i-kawa" },
     { title: "Poznań Motor Show – dzień 4", link: "https://www.facebook.com/PoznanMotorShow/" },
     { title: "Grand Prix de Monaco Historique – dzień 3", link: "https://www.monacograndprixhistoric.com/" },
