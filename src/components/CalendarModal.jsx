@@ -102,7 +102,6 @@ const EVENTS = {
     { title: "Wiosenne Spotkanie Citroën Oldtimer Club Polska", link: "https://www.facebook.com/events/s/wiosenne-spotkanie-citroen-old/1728668441442280/" },
   ],
   "2026-04-18": [
-    { title: "Zlot klasycznej motoryzacji - start sezonu", link: "https://www.facebook.com/events/1725509802183080/" },
     { title: "Motor Vintage Bazar - edycja letnia", link: "https://facebook.com/events/s/motor-vintage-bazar-edycja-let/798296532590367/" },
     { title: "Anantara Concorso Roma – dzień 3", link: "https://www.facebook.com/AnantaraConcorsoRoma" },
     { title: "MOTO CASTLE FEST 2026", link: "https://facebook.com/events/s/moto-castle-fest-2026-x-zamek-/25532706783083026/" },
