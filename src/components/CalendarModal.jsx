@@ -228,9 +228,13 @@ const EVENTS = {
   ],
   "2026-06-05": [
     { title: "10 edycja Charytatywnego Rajdu Koguta – dzień 2", link: "https://rajdkoguta.com.pl/" },
+    { title: "Drive It Day 2026", link: "https://www.facebook.com/events/s/drive-it-day-2026/948043838070997/" },
   ],
   "2026-06-06": [
     { title: "10 edycja Charytatywnego Rajdu Koguta – dzień 3", link: "https://rajdkoguta.com.pl/" },
+  ],
+  "2026-06-07": [
+    { title: "Primavera Italiana 2026", link: "https://www.facebook.com/events/s/primavera-italiana-2026/1655485122161081/" },
   ],
   "2026-06-09": [
     { title: "Mille Miglia – dzień 1", link: "https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/" },
@@ -266,6 +270,7 @@ const EVENTS = {
     { title: "13 Zlot pojazdów zabytkowych i klasycznych w Mszczonowie - 'Trzynastka to nie pech'", link: "https://facebook.com/events/s/13-zlot-pojazdow-zabytkowych-i/791980083796335/" },
     { title: "III Turystyczny Rajd Pojazdów Zabytkowych Geoparku Kraina Wygasłych Wulkanów", link: "https://facebook.com/events/s/iii-turystyczny-rajd-pojazdow-/918174083890186/" },
     { title: "8. Zlot Cadillac Owners Poland – dzień 3", link: "https://www.facebook.com/events/s/8-zlot-cadillac-owners-poland/1303434384891201/" },
+    { title: "Śniadanie & Gablota - Classic Kaszebe 2026", link: "https://www.facebook.com/events/1057337039957171/" },
   ],
   "2026-06-16": [
     { title: "FIVA World Motorcycle Rally 2026 – dzień 1", link: "https://fiva-wmr-2026.akhv.cz/" },
@@ -285,12 +290,14 @@ const EVENTS = {
     { title: "FIVA World Motorcycle Rally 2026 – dzień 5", link: "https://fiva-wmr-2026.akhv.cz/" },
     { title: "CSG Automotive Event 2026", link: "https://facebook.com/events/s/csg-automotive-event-2026-even/1398389201746471/" },
     { title: "ACES Concours d'Eleganza", link: "https://www.facebook.com/events/s/aces-concours-deleganza/757867336918166/" },
+    { title: "HEL Riders Festival 2026 – dzień 1 ", link: "https://www.facebook.com/events/s/hel-riders-festival-2026/3062896510569840/" },
   ],
   "2026-06-21": [
     { title: "Moto Summer 8 - FESTIVAL – dzień 3", link: "https://facebook.com/events/s/moto-summer-8-festival/1340168223807045/" },
     { title: "FIVA World Motorcycle Rally 2026 – dzień 6", link: "https://fiva-wmr-2026.akhv.cz/" },
     { title: "III Miechowski Zlot Klasyków Miechów w PRL-u", link: "https://facebook.com/events/s/iii-miechowski-zlot-klasykow-m/1522105129027381/" },
     { title: "8. Zlot Klasyków w Kowarach", link: "https://facebook.com/events/s/8-zlot-klasykow-w-kowarach/855514190674218/" },
+    { title: "HEL Riders Festival 2026 – dzień 2 ", link: "https://www.facebook.com/events/s/hel-riders-festival-2026/3062896510569840/" },
   ],
   "2026-06-25": [
     { title: "37th Coupe des Alpes 2026 – dzień 1", link: "https://www.rallystory.com/rallyes/coupe-des-alpes-2026/" },
@@ -311,7 +318,8 @@ const EVENTS = {
     { title: "Aurora Concours – dzień 2", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 1", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
     { title: "Vrooom Classic Race Event – dzień 1", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
-    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 2", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" }
+    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 2", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" },
+    { title: "Audisport Festiwal 2026 – dzień 1", link: "https://www.audisportfestiwal.pl/" }
   ],
   "2026-06-28": [
     { title: "La Leggenda di Bassano – dzień 4", link: "https://www.facebook.com/laleggendadibassano" },
@@ -320,7 +328,8 @@ const EVENTS = {
     { title: "Aurora Concours – dzień 3", link: "https://www.theaurora.se/" },
     { title: "Zlot Pojazdów Klasycznych I Zabytkowych Retro Show VII – dzień 2", link: "https://facebook.com/events/s/zlot-pojazdow-klasycznych-i-za/1152496260207123/" },
     { title: "Vrooom Classic Race Event – dzień 2", link: "https://www.facebook.com/events/s/vrooom-classic-race-event/1274015144600097/" },
-    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 3", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" }
+    { title: "XXII Międzynarodowy Rajd Pojazdów Zabytkowych - Dookoła wulkanów – dzień 3", link: "https://www.facebook.com/events/s/xxii-miedzynarodowym-rajdzie-p/3119870508199047" },
+    { title: "Audisport Festiwal 2026 – dzień 2", link: "https://www.audisportfestiwal.pl/" }
   ],
   "2026-07-02": [
     { title: "OSAKA - 10th Anniversary | Zlot Fanów Japońskiej Motoryzacji", link: "https://facebook.com/events/s/osaka-10th-anniversary-i-zlot-/783523851160423/" },
@@ -436,16 +445,27 @@ const EVENTS = {
   ],
   "2026-08-21": [
     { title: "XI Zlot FSO", link: "https://facebook.com/events/s/xi-zlot-fso/2506523996398991/" },
+    { title: "Motoclassic Wrocław 2026 – dzień 1", link: "https://motoclassicwroclaw.pl/" },
   ],
   "2026-08-22": [
     { title: "Samurai Mustang 2", link: "https://www.facebook.com/events/s/samurai-mustang-2/1570462727272016/" },
     { title: "Sweden Wheels 2026 - III Zlot Miłośników Szwedzkiej Motoryzacji", link: "https://www.facebook.com/events/s/sweden-wheels-2026-iii-zlot-mi/788931677568625/" },
+    { title: "Demode et Cabriolet - Targi Vintage", link: "https://www.facebook.com/events/s/demode-et-cabriolet-targi-vint/1303780418002272/" },
+    { title: "Motoclassic Wrocław 2026 – dzień 2", link: "https://motoclassicwroclaw.pl/" },
+  ],
+  "2026-08-23": [
+    { title: "Motoclassic Wrocław 2026 – dzień 3", link: "https://motoclassicwroclaw.pl/" },
+  ],
+  "2026-08-28": [
+    { title: "Substance 2026 – dzień 1", link: "https://substance.com.pl/" },
   ],
   "2026-08-29": [
+    { title: "Substance 2026 – dzień 2", link: "https://substance.com.pl/" },
     { title: "Polski Rajd Legend – dzień 1", link: "http://prl.org.pl/" },
     { title: "VI Festiwal Pojazdów Nieznanych, Nieudanych i Zapomnianych", link: "https://facebook.com/events/s/vi-festiwal-pojazdow-nieznanyc/1156532899981879/" },
   ],
   "2026-08-30": [
+    { title: "Substance 2026 – dzień 3", link: "https://substance.com.pl/" },
     { title: "Polski Rajd Legend – dzień 2", link: "http://prl.org.pl/" },
     { title: "Porsche Meeting 2026", link: "https://www.facebook.com/events/s/porsche-meeting-2026/1503878627681086/" },
   ],
@@ -455,13 +475,21 @@ const EVENTS = {
   "2026-09-12": [
     { title: "Bernina GranTurismo – dzień 2", link: "https://www.facebook.com/berninagranturismo" },
     { title: "Custom Fest 2026", link: "https://www.facebook.com/events/1206429088278875" },
+    { title: "Widely Low City Meet", link: "https://www.facebook.com/events/s/widely-low-city-meet/2077392259659373/" },
   ],
   "2026-09-13": [
     { title: "Bernina GranTurismo – dzień 3", link: "https://www.facebook.com/berninagranturismo" },
   ],
+  "2026-09-16": [
+    { title: "MSLAB ICONS TOUR – dzień 1", link: "https://www.facebook.com/events/s/mslab-icons-tour-jedyne-takie-/2360624214462626/" },
+  ],
+  "2026-09-17": [
+    { title: "MSLAB ICONS TOUR – dzień 2", link: "https://www.facebook.com/events/s/mslab-icons-tour-jedyne-takie-/2360624214462626/"},
+  ],
   "2026-09-18": [
     { title: "10. Jubileuszowa edycja Retro Motor Show – dzień 1", link: "https://facebook.com/events/s/10-jubileuszowa-edycja-retro-m/2490176171377135/" },
-    { title: "BALTICTREFFEN 6TH 2026 BY VOLKSTEAM – dzień 1", link: "https://facebook.com/events/s/baltictreffen-6th-2026-by-volk/1127098252867051/" }
+    { title: "BALTICTREFFEN 6TH 2026 BY VOLKSTEAM – dzień 1", link: "https://facebook.com/events/s/baltictreffen-6th-2026-by-volk/1127098252867051/" },
+    { title: "MSLAB ICONS TOUR – dzień 3", link: "https://www.facebook.com/events/s/mslab-icons-tour-jedyne-takie-/2360624214462626/" },
   ],
   "2026-09-19": [
     { title: "III runda Via Classica Cup", link: "https://www.facebook.com/ViaPrestigeEurope/" },
